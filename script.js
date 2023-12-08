@@ -1,12 +1,20 @@
 function fibonacci(num) {
-  const fibonacciSequence = [0, 1];
-
-  for (let i = 2; i < num; i++) {
-    const nextFibonacci = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
-    fibonacciSequence.push(nextFibonacci);
+  if (num === 0) {
+    return 0;
+  } else if (num === 1) {
+    return 1;
   }
 
-  return fibonacciSequence.slice(0, num);
+  let prev = 0;
+  let current = 1;
+
+  for (let i = 2; i <= num; i++) {
+    const next = prev + current;
+    prev = current;
+    current = next;
+  }
+
+  return prev;
 }
 
 module.exports = fibonacci;
