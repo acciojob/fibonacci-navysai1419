@@ -20,12 +20,12 @@ function fibonacci(num) {
 module.exports = fibonacci;
 
 
-// Replace the following line with the actual import of your function
 const fibonacci = require('./path-to-fibonacci');
 
 test('Example test case', () => {
-  const result = fibonacci(1); // Replace with the actual function call
+  const result = fibonacci(1);
 
-  // Update the expected value to 1 if that is the correct Fibonacci number for input 1
-  expect(result).toHaveProperty('message', 1);
+  // Update the expected value to 0 if that is the correct Fibonacci number for input 1
+  expect(result).toBe(0);
 });
+
